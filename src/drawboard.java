@@ -16,6 +16,7 @@ public class drawboard extends JFrame {
 
     JPanel bottonpanel = new JPanel();
     MyPanel panel = new MyPanel();
+
     public drawboard(){
         setSize(1300, 700);     //프레임 크기 설정
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 프레임 윈도우를 닫으면 프로그램 종료
@@ -407,6 +408,7 @@ public class drawboard extends JFrame {
                 fontsize.setText("Font size: " + CurrentStroke);
             }
             else if(e.getActionCommand().equals("Clear")){
+                read = false;
                 vStart.clear();
                 vEnd.clear();
                 mode.clear();
