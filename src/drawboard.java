@@ -14,8 +14,8 @@ import java.io.*;
 
 public class drawboard extends JFrame {
 
+    JPanel bottonpanel = new JPanel();
     MyPanel panel = new MyPanel();
-
     public drawboard(){
         setSize(1300, 700);     //프레임 크기 설정
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 프레임 윈도우를 닫으면 프로그램 종료
@@ -24,6 +24,7 @@ public class drawboard extends JFrame {
         //getContentPane().setLayout(null); //레이아웃 설정
 
         add(panel);        //frame에 panel추가
+        add(bottonpanel, BorderLayout.NORTH);
         //BufferedImage img = new BufferedImage(1300, 700, BufferedImage.TYPE_INT_RGB);
 
         setVisible(true);           //프레임이 보이도록 설정
@@ -94,21 +95,21 @@ public class drawboard extends JFrame {
             fontsize.setText("Font size: " + CurrentStroke);
             //strokeComboBox.setModel(new DefaultComboBoxModel<Float>(new Float[]{(float)5, (float)10, (float)15, (float)20, (float)25}));
 
-            add(btn[0]);
-            add(btn[1]);
-            add(btn[2]);
-            add(btn[3]);
-            add(btn[4]);
-            add(btn[5]);
-            add(btn[6]);
-            add(btn[12]);
-            add(btn[7]);
-            add(btn[8]);
-            add(btn[9]);
-            add(label);
-            add(btn[10]);
-            add(btn[11]);
-            add(fontsize);
+            bottonpanel.add(btn[0]);
+            bottonpanel.add(btn[1]);
+            bottonpanel.add(btn[2]);
+            bottonpanel.add(btn[3]);
+            bottonpanel.add(btn[4]);
+            bottonpanel.add(btn[5]);
+            bottonpanel.add(btn[6]);
+            bottonpanel.add(btn[12]);
+            bottonpanel.add(btn[7]);
+            bottonpanel.add(btn[8]);
+            bottonpanel.add(btn[9]);
+            bottonpanel.add(label);
+            bottonpanel.add(btn[10]);
+            bottonpanel.add(btn[11]);
+            bottonpanel.add(fontsize);
             //add(colorComboBox);
             //add(strokeComboBox);
 
@@ -247,8 +248,8 @@ public class drawboard extends JFrame {
             sav.setColor(Color.white);
             sav.fillRect(0,0,1300,700);
             if(read){
-                g.drawImage(readimage, 0, 50, 1300, 700, this);
-                sav.drawImage(readimage, 0, 50, 1300, 700, this);
+                g.drawImage(readimage, 0, 0, 1300, 700, this);
+                sav.drawImage(readimage, 0, 0, 1300, 700, this);
             }
 
             for(int i = 0; i < vEnd.size(); i++){
